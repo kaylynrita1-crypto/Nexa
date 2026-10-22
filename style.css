@@ -1,0 +1,219 @@
+
+/* =====================================
+   NEXA — EMERALD & CHAMPAGNE THEME
+   Premium • Elegant • Modern
+   ===================================== */
+
+:root {
+    --nexa-bg: #091B16;
+    --nexa-surface: #102820;
+    --nexa-green: #176B53;
+    --nexa-green-bright: #35A77B;
+    --nexa-champagne: #DCC69A;
+    --nexa-text: #F3F1E8;
+    --nexa-muted: #B6C6BC;
+}
+
+/* Main application background */
+.stApp {
+    background:
+        radial-gradient(
+            ellipse at top left,
+            #193F30 0%,
+            transparent 48%
+        ),
+        linear-gradient(
+            135deg,
+            #091B16,
+            #0B2119 60%,
+            #102820
+        );
+    color: var(--nexa-text);
+}
+
+/* Main content layout */
+.block-container {
+    max-width: 1150px;
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: var(--nexa-text) !important;
+    letter-spacing: 0.3px;
+}
+
+h1 {
+    font-weight: 800 !important;
+}
+
+h2, h3 {
+    font-weight: 650 !important;
+}
+
+/* Text */
+p, label, .stMarkdown {
+    color: var(--nexa-text);
+}
+
+small,
+.stCaption {
+    color: var(--nexa-muted) !important;
+}
+
+/* Buttons */
+.stButton > button,
+.stDownloadButton > button {
+    background: linear-gradient(
+        115deg,
+        #176B53,
+        #238563
+    );
+    color: #FFFFFF;
+    border: 1px solid var(--nexa-champagne);
+    border-radius: 12px;
+    padding: 0.65rem 1.1rem;
+    font-weight: 650;
+    transition: all 0.2s ease;
+}
+
+/* Button hover effect */
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background: linear-gradient(
+        115deg,
+        #238563,
+        #35A77B
+    );
+    color: #FFFFFF;
+    border: 1px solid #F0DDB5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px #35A77B30;
+}
+
+/* Text inputs */
+.stTextInput input,
+.stNumberInput input,
+.stDateInput input {
+    background-color: #102820;
+    color: var(--nexa-text);
+    border: 1px solid #416B56;
+    border-radius: 10px;
+}
+
+/* Text areas */
+.stTextArea textarea {
+    background-color: #102820;
+    color: var(--nexa-text);
+    border: 1px solid #416B56;
+    border-radius: 10px;
+}
+
+/* Focused input fields */
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+.stNumberInput input:focus {
+    border-color: var(--nexa-champagne);
+    box-shadow: 0 0 0 1px var(--nexa-champagne);
+}
+
+/* Dropdowns and selection controls */
+.stSelectbox div[data-baseweb="select"],
+.stMultiSelect div[data-baseweb="select"] {
+    background-color: #102820;
+    border-radius: 10px;
+}
+
+/* Saved plans and expandable sections */
+[data-testid="stExpander"] {
+    background: linear-gradient(
+        135deg,
+        #102820,
+        #143328
+    );
+    border: 1px solid #416B56;
+    border-radius: 14px;
+    margin-bottom: 12px;
+}
+
+/* Bordered containers */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: #416B56;
+    border-radius: 14px;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: linear-gradient(
+        180deg,
+        #0B2119,
+        #102820
+    );
+    border-right: 1px solid #416B56;
+}
+
+/* Horizontal dividers */
+hr {
+    border-color: #416B56;
+}
+
+/* Links */
+a {
+    color: var(--nexa-champagne) !important;
+}
+
+a:hover {
+    color: #F0DDB5 !important;
+}
+
+/* Checkboxes and radio controls */
+.stCheckbox label,
+.stRadio label {
+    color: var(--nexa-text) !important;
+}
+
+/* Notifications and status messages */
+[data-testid="stAlert"] {
+    border-radius: 12px;
+}
+
+/* File uploader */
+[data-testid="stFileUploader"] {
+    background-color: #102820;
+    border: 1px dashed #416B56;
+    border-radius: 14px;
+    padding: 12px;
+}
+
+/* Tables */
+[data-testid="stTable"],
+[data-testid="stDataFrame"] {
+    border: 1px solid #416B56;
+    border-radius: 10px;
+}
+
+/* Subtle interaction transitions */
+button,
+input,
+textarea,
+select {
+    transition: all 0.2s ease;
+}
+
+
+
+/* NEXA creator signature */
+.nexa-signature {
+    position: fixed;
+    bottom: 18px;
+    right: 24px;
+    color: #DCC69A;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    font-size: 17px;
+    letter-spacing: 0.8px;
+    opacity: 0.95;
+    z-index: 999;
+    pointer-events: none;
+}

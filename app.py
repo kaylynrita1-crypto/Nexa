@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 from google import genai
 
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY", None)
 
 client = genai.Client(api_key=api_key) if api_key else None
 if "tool_recommendation" not in st.session_state:
@@ -29,6 +29,70 @@ st.set_page_config(
     page_icon="💜",
     layout="wide"
 )
+
+
+# ==============================
+# NEXA SIDEBAR
+# ==============================
+
+with st.sidebar:
+    st.markdown("# 💚 NEXA")
+    st.caption("Your ideas. Unlocked.")
+
+    st.divider()
+
+    if st.button("＋ New chat", use_container_width=True):
+        st.session_state["nexa_prompt"] = ""
+        st.rerun()
+
+    st.markdown("### Your tools")
+
+    selected_tool = st.radio(
+        "Choose a tool",
+        [
+            "AI Assistant",
+            "CV Creator",
+            "Budget Planner",
+            "Project Planner",
+            "Poster Creator",
+        ],
+        label_visibility="collapsed",
+    )
+
+    st.divider()
+    st.caption("NEXA by Rita")
+# ==============================
+# NEXA SIDEBAR
+# ==============================
+
+with st.sidebar:
+    st.markdown("# 💚 NEXA")
+    st.caption("Your ideas. Unlocked.")
+
+    st.divider()
+
+    if st.button("＋ New chat", use_container_width=True, key="nexa_sidebar_new_chat"):
+        st.session_state["nexa_prompt"] = ""
+        st.rerun()
+
+    st.markdown("### Your tools")
+
+    selected_tool = st.radio(
+    "Choose a tool",
+    [
+        "AI Assistant",
+        "CV Creator",
+        "Budget Planner",
+        "Project Planner",
+        "Poster Creator",
+    ],
+    label_visibility="collapsed",
+    key="nexa_sidebar_tool_selector",
+)
+
+    st.divider()
+
+    st.caption("NEXA by Rita")
 
 st.title("💜 NEXA")
 st.subheader("Your Intelligent Digital Toolbox")
